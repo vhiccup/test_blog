@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}blog post{% endblock %} {% block content %}
+
+<div style="margin-left:10px">
+    <form class="form-horizontal" action="." method="post">{% csrf_token %} 
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-2 text-right"><span>标题:</span></div>
+            <div class="col-md-10 text-left">{{blog_article_post_form.title}}</div> 
+        </div>
+        <div class="row" style="margin-top: 10px;">
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-2 text-right"><span>内容:</span></div>
+            <div class="col-md-10 text-left">{{blog_article_post_form.body}}</div>
+            <div id="editormd" class="col-md-10 text-left">
+                <textarea style="display:none;" id="id_body"></textarea>
+            </div> 
+        </div>
+        <div class="row">
+            <input type="submit" class="btn btn-primary btn-lg" value="发布" >
+        </div>
+    </form>
+</div>
+
+<script src="{% static '/ckeditor/ckeditor/ckeditor.js' %}"></script>
+<script src="{% static '/ckeditor/ckeditor-init.js' %}"></script> 
+<!--<script type="text/javascript" src="{% static 'js/json2.js' %}"></script>-->
+
+{% endblock %}

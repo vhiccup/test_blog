@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Home page{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'mouse/style.css' %}"> 
+<div class="text-center">
+    <h1>Blog Vhiccup</h1>
+    <h3>Dont' be shy, move your mouse around!</h3>
+    <h2>动一下你的鼠标试试！</h2>
+    {% load staticfiles %}
+    <img width="400" src="{% static 'images/huoerdun.png' %}">
+</div>
+<canvas id='c'></canvas>
+
+<!-- partial -->
+<script  src="{% static 'mouse/script.js' %}"></script> 
+{% endblock %}

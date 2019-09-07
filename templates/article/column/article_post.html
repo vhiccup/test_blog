@@ -1,0 +1,40 @@
+{% extends "article/base.html" %}
+{% load staticfiles %}
+{% block title %}article column{% endblock %} {% block content %}
+
+<div style="margin-left:10px">
+    <form class="form-horizontal" action="." method="post">{% csrf_token %} 
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-2 text-right"><span>标题:</span></div>
+            <div class="col-md-10 text-left">{{article_post_form.title}}</div> 
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-2 text-right"><span>栏目:</span></div> 
+            <div class="col-md-10 text-left">
+                <select name="column_id">
+                    {% for column in article_columns %}
+                    <option value="{{column.id}}">{{column.column}}</option> 
+                    {% endfor %}
+                </select> 
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-2 text-right"><span>内容:</span></div>
+            <div class="col-md-10 text-left">{{article_post_form.body}}</div>
+            </div> 
+        </div>
+        <div class="row">
+           <input type="submit" class="btn btn-primary btn-lg" value="发布" ">
+        </div>
+    </form>
+</div>
+
+<script src="{% static '/ckeditor/ckeditor/ckeditor.js' %}"></script>
+<script src="{% static '/ckeditor/ckeditor-init.js' %}"></script> 
+
+
+}
+</script>
+{% endblock %}

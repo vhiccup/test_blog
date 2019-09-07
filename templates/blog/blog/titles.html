@@ -1,0 +1,40 @@
+{% extends "base.html" %} 
+
+{% block title %}block titles{% endblock %}
+{% load staticfiles %}
+{% block content %}
+<div class="row text-center vertical-middle-sm">
+    <h1>我的博客</h1>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+            <table class="table table-hover"> 
+        <tr>
+            <td>序号</td>
+            <td>标题</td> 
+            <td>栏目</td>
+            <td>操作</td> 
+        </tr>
+        {% for blog in blogs %} 
+        <tr id={{ blog.id }}>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{{article.get_absolute_url}}">{{ blog.title }}</a></td> 
+            <td>{{blog.publish}}</td>
+            <td>
+            <a name="edit" href=""<span class="glyphicon glyphicon-pencil"></span></a>
+            <a name="delete" href="" onclick="del_article(this, {{article.id}})">
+               <span class="glyphicon glyphicon-trash" style="margin-left:20px;"></span></a>
+            </td>
+        </tr>
+        {% endfor %} 
+    </table>
+    {% include "paginator.html" %}
+        <li><srtong><a href="{% url 'blog:blog_post' %}">发布新blog</a></strang></li> 
+    </div>
+    <div class="col-xs-4 col-md-4">
+        <h2>Blog Vhiccup</h2>
+        <p>你是我的半截的诗</p>
+        <img width="400px" src="{% static 'images/huoerdun.png' %}" alt="麦田">
+    </div>
+</div>
+{% endblock %}

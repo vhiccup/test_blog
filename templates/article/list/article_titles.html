@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load my_tags %}
+{% block title %} articles {% endblock %}
+{% block content %}
+<div class="row text-center vertical-middle-sm">
+    <h1>她试着抓住这最后的光</h1>
+</div>
+<div class="container">
+    {% for article in articles %} 
+    <div class="list-group">
+        <a href="{{article.get_url_path}}" class="list-group-item active">
+            <h4 class="list-group-item-heading" align="center">{{article.title}}</h4> 
+        </a>
+        <p class="list-group-item-text" align="center">作者:<a href="{% url 'article:author_articles' article.author.username %}">{{article.author.username}}</a></p>
+        <p class="list-group-item-text" align="left">更新时间:{{article.updated}}</p>
+        <p class="list-group-item-text" align="left">概要:{{article.body|movespace |safe|slice:'40'}}......</p> 
+    </div>
+    {% endfor %}
+{% include "paginator.html" %} 
+</div>
+{% endblock %}

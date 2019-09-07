@@ -1,0 +1,42 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Jul 30 18:23:33 2019] ***
+compiled with version: 7.4.0 on 01 July 2019 07:25:17
+os: Linux-4.15.0-48-generic #51-Ubuntu SMP Wed Apr 3 08:28:49 UTC 2019
+nodename: instance-iq62f7jp
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/test1
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/test1
+your processes number limit is 7758
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8010 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:43147 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Jan 14 2019, 11:02:34)  [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]]
+Python main interpreter initialized at 0x564c94a37470
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x564c94a37470 pid: 15282 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 15282)
+spawned uWSGI worker 1 (pid: 15284, cores: 2)
+spawned uWSGI worker 2 (pid: 15285, cores: 2)
+spawned uWSGI worker 3 (pid: 15286, cores: 2)
+spawned uWSGI worker 4 (pid: 15287, cores: 2)
+spawned uWSGI http 1 (pid: 15288)

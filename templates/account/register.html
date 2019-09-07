@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Register User{% endblock %}
+{% block content %}
+
+<div class="row text-center vertical-middle-sm">
+    <h1>Register</h1>
+    <p>If you have registed please click <strong><a href="{% url 'account:user_login' %}">LOGIN</a></strong></p>
+    <p>If not please register.</p>
+    <form class="form-horizontal" action="." method="post">{% csrf_token %}
+         <div class="form-group">
+             <label for="{{form.username.id_for_label}}" class="col-md-5 control-label">Username</label>
+             <div class="col-md-6 text-left">{{form.username}}</div>
+         </div>
+         <div class="form-group">
+             <label for="{{form.email.id_for_label}}" class="col-md-5 control-label">Email</label>
+             <div class="col-md-6 text-left">{{form.email}}</div>
+         </div>
+         <div class="form-group">
+             <label for="{{form.password.if_for_label}}" class="col-md-5 control-label">Password</label>
+             <div class="col-md-6 text-left">{{form.password}}</div>
+         </div>
+         <div class="form-group">
+             <label for="{{form.password.if_for_label}}" class="col-md-5 control-label">Confirm Password</label>
+             <div class="col-md-6 text-left">{{form.password2}}</div>
+         </div>
+         <div class="form-group">
+             <label for="{{profile.birth.if_for_label}}" class="col-md-5 control-label">Birth Date</label>
+             <div class="col-md-6 text-left">{{profile.birth}}</div>
+         </div>
+         <div class="form-group">
+             <label for="{{profile.phone.if_for_label}}" class="col-md-5 control-label">Phone Number</label>
+             <div class="col-md-6 text-left">{{profile.phone}}</div>
+         </div>
+         <div class="form-group">
+             <label for="{{profile.sex.if_for_label}}" class="col-md-5 control-label">sex</label>
+             <div class="col-md-6 text-left">{{profile.sex}}</div>
+         </div>
+         <p> 请填写合法有效的邮箱,&nbsp便于重置密码</p>
+         
+         <input type="submit" class="btn btn-primary btn-lg" value="REGISTIER">
+    </form>
+</div>
+{% endblock %}
+
+    
