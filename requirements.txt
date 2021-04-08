@@ -1,6 +1,6 @@
 awesome-slugify==1.6.5
 
-Django==2.2.4
+Django==2.2.20
 
 django-ckeditor==5.7.1
 
