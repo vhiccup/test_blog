@@ -16,7 +16,7 @@ redis==3.3.8
 
 regex==2019.8.19
 
-sqlparse==0.3.0
+sqlparse==0.4.4
 
 Unidecode==0.4.21
 
